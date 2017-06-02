@@ -2,8 +2,8 @@
 
 PWMMotor::PWMMotor (int dP, int pP, bool bR) {
     pinDirection = dP;
-    pinPower = pP;
-    bReversed = pR;
+    pinPWM = pP;
+    bReversed = bR;
     pinMode(pinDirection, OUTPUT);  
 }
 
@@ -16,6 +16,6 @@ void PWMMotor::setPower (int power) {
     } else {
         digitalWrite(pinDirection,LOW);
     }   
-    analogWrite(pinPower, abs(value));
+    analogWrite(pinPWM, abs(power));
 }
 

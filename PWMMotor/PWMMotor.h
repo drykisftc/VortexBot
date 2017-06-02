@@ -11,5 +11,5 @@ class PWMMotor {
     protected:
         int pinDirection, pinPWM;
         bool bReversed;
-}
+};
 #endif
