@@ -10,45 +10,44 @@ long interruptRightEncoder = 0;
 int rightEncoderPin = 1;
 
 void forwardLeftEncoderCallBack() {
-      interruptLeftEncoder++;
+  interruptLeftEncoder++;
 }
 
 void forwardRightEncoderCallBack() {
-      interruptRightEncoder++;
+  interruptRightEncoder++;
 }
 
 void backwardLeftEncoderCallBack() {
-      interruptLeftEncoder--;
+  interruptLeftEncoder--;
 }
 
 void backwardRightEncoderCallBack() {
-      interruptRightEncoder--;
+  interruptRightEncoder--;
 }
 
 void setup() {
-      leftMotor = new PWMMotor(9,5,false);
-        leftMotor->setEncoder(leftEncoderPin,&interruptLeftEncoder,forwardLeftEncoderCallBack,backwardLeftEncoderCallBack);
-          rightMotor = new PWMMotor(10,6,false);
-            rightMotor->setEncoder(rightEncoderPin,&interruptRightEncoder,forwardRightEncoderCallBack,backwardRightEncoderCallBack);
-              Serial.begin(9600);
+  leftMotor = new PWMMotor(9,5,false);
+  leftMotor->setEncoder(leftEncoderPin,&interruptLeftEncoder,forwardLeftEncoderCallBack,backwardLeftEncoderCallBack);
+  rightMotor = new PWMMotor(10,6,false);
+  rightMotor->setEncoder(rightEncoderPin,&interruptRightEncoder,forwardRightEncoderCallBack,backwardRightEncoderCallBack);
+  Serial.begin(9600);
 }
 
 void loop() {
-      // put your main code here, to run repeatedly:
-      //   leftMotor->setPower(-155);
-      //     rightMotor->setPower(155);
-      //       int lPos = leftMotor->getPosition();
-      //         int rPos = rightMotor->getPosition();
-      //
-      //           Serial.print("left wheel pos:");
-      //             Serial.println(lPos);
-      //               Serial.print("right wheel pos:");
-      //                 Serial.println(rPos);
-      //                  
-      //                  }
-      //
-      //                  void cleanup() {
-      //                     if (leftMotor) delete leftMotor;
-      //                        if (rightMotor) delete rightMotor;
-      //                        }
-      //
+  // put your main code here, to run repeatedly:
+  leftMotor->setPower(-155);
+  rightMotor->setPower(155);
+  int lPos = leftMotor->getPosition();
+  int rPos = rightMotor->getPosition();
+
+  Serial.print("left wheel pos:");
+  Serial.println(lPos);
+  Serial.print("right wheel pos:");
+  Serial.println(rPos);
+}
+
+void cleanup() {
+  if (leftMotor) delete leftMotor;
+  if (rightMotor) delete rightMotor;
+}
+
