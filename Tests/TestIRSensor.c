@@ -1,21 +1,3 @@
-/***************************************************
- Vortex V1.0 （Small robots like bread）
- <http://www.dfrobot.com.cn/goods-1199.html>
-  
- ***************************************************
- This example show how to use Infrared sensor to avoid obstacles.
-  
- Created 2016-2-3
- By Andy zhou <Andy.zhou@dfrobot.com>
- version:V1.0
- ****************************************************/
- 
-/***********Notice and Trouble shooting***************
- 1.Connection and Diagram can be found here
- <http://wiki.dfrobot.com.cn/index.php?title=(SKU:ROB0116)_Vortex%E5%8F%AF%E7%BC%96%E7%A8%8B%E6%9C%BA%E5%99%A8%E4%BA%BA#.E6.A0.B7.E4.BE.8B.E4.BB.A3.E7.A0.81>
- 2.This code is tested on vortex V1.0.
- ****************************************************/
-
 #include <IRSensor.h>
 #include <PWMMotor.h>
 #include <InterruptEncoder.h>
